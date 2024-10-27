@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- -->
+<div th:text="${name}"></div>
+<!-- 使用utext转译属性值里面的html标签 -->
+<div th:utext="${msg}"></div>
+<hr>
+<!-- 列表的两种绑定方式： -->
+<h3 th:each="user:${users}"th:text="${user}"></h3>
+<h5 th:each="user:${users}">[[${user}]]</h5>
+
+</body>
+</html>

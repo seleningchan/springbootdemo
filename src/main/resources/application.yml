@@ -1,0 +1,63 @@
+#logging:
+ # level:
+  #  org.springframework.jdbc.core.JdbcTemplate: DEBUG
+logging:
+  level:
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/springbootdemo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+      #数据库连接url
+    url: jdbc:mysql://127.0.0.1:3306/spring-boot-data-learn
+      #数据库用户名
+    username: root
+      #数据库密码
+    password: 123456
+    hikari:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/spring-boot-data-learn
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+  jdbc:
+      template:
+        fetch-size: -1
+        max-rows: -1
+          #查询超时。默认是使用JDBC驱动程序的默认配置。如果没有指定持续时间后缀，则使用seconds。
+        query-timeout:
+  messages:
+    basename: "messages,i18n.login"
+    fallback-to-system-locale: true
+  application:
+    name: springbootdemo
+  profiles:
+    active: dev
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    cache: false
+    suffix: .html
+    mode: HTML
+
+
+server:
+  port: 8080
+home:
+  name: this is web page
+person:
+  name: Tom
+  age:  18
+  birth:  2000/08/08
+  maps: {k1: hello, k2: 12}
+  lists:
+    - list1
+    - list2
+  Dog:
+    name: hatch
+    age: 3
+debug: true
